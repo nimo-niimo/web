@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>嵌入网页示例</title>
+    <style>
+        /* CSS样式保持不变 */
+    </style>
+</head>
+<body>
+    <iframe id="myIframe" src="http://baidu.com" width="100%"></iframe>
+
+    <script>
+        // 获取iframe元素
+        var iframe = document.getElementById('myIframe');
+
+        // 获取当前iframe的src属性
+        var currentSrc = iframe.src;
+
+        // 解析URL参数
+        var urlParams = new URLSearchParams(currentSrc);
+
+        // 获取需要的参数
+        var hezi = urlParams.get('hezi');
+        var f = urlParams.get('f');
+        var cd = urlParams.get('cd');
+
+        // 构造新的URL
+        var newUrl = 'http://example.com/index/index/index?hezi=' + hezi + '&f=' + f + '&cd=' + cd;
+
+        // 设置iframe的src属性
+        iframe.src = newUrl;
+    </script>
+</body>
+</html>
